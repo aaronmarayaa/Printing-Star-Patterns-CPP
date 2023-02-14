@@ -24,22 +24,23 @@ void diamondPattern(int n){
 }
 
 void halfDiamondPattern(int n){
+    char c = ' ';
     for(int i = 0; i < n; i++){
         for(int j = i; j < n; j++){
-            cout << " ";
+            printf("%2c", c);
         }
         for(int k = 0; k < i; k++){
-            cout << "*";
+            cout << " *";
         }
         cout << endl;
     }
 
     for(int x = 0; x < n; x++){
         for(int z = 0; z < x; z++){
-            cout << " ";
+            printf("%2c", c);
         }
         for(int y = x; y < n; y++){
-            cout << "*";
+            cout << " *";
         }
         cout << endl;
 
@@ -118,12 +119,13 @@ void reverseTrianglePattern(int n){
 }
 
 void rightTrianglePattern_ii(int n){
+    char c = ' ';
       for(int i = 0; i < 5; i++) {
         for(int j = i; j < 5; j++){
-            cout << " ";
+            printf("%2c", c);
         }
         for(int k = 0; k < i; k++){
-            cout << "*";
+            cout << "* ";
         }
         cout << endl;
       }
@@ -137,7 +139,7 @@ int main() {
     cout << "[e] Right Triangle Pattern" << endl;
     cout << "[f] Triangle Pattern" << endl;
     cout << "[g] Reverse Triangle Pattern" << endl;
-    cout << "[h] Reverse Right Triangle Pattern\n" << endl;
+    cout << "[h] Right Triangle II Pattern\n" << endl;
 
     char input_character;
     cout << "Enter Character: ";
