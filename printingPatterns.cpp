@@ -120,8 +120,8 @@ void reverseTrianglePattern(int n){
 
 void rightTrianglePattern_ii(int n){
     char c = ' ';
-      for(int i = 0; i < 5; i++) {
-        for(int j = i; j < 5; j++){
+      for(int i = 0; i < n; i++) {
+        for(int j = i; j < n; j++){
             printf("%2c", c);
         }
         for(int k = 0; k < i; k++){
@@ -129,6 +129,21 @@ void rightTrianglePattern_ii(int n){
         }
         cout << endl;
       }
+}
+
+void hollowDiamond(int n){
+        int midRow = (n + 1) / 2;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (abs(midRow - i) + abs(midRow - j) == midRow - 1) {
+                    cout << "*";
+                } else {
+                    cout << " ";
+                }
+            }
+            cout << endl;
+        }
 }
 
 int main() {
@@ -139,7 +154,8 @@ int main() {
     cout << "[e] Right Triangle Pattern" << endl;
     cout << "[f] Triangle Pattern" << endl;
     cout << "[g] Reverse Triangle Pattern" << endl;
-    cout << "[h] Right Triangle II Pattern\n" << endl;
+    cout << "[h] Right Triangle II Pattern" << endl;
+    cout << "[i] Hollow Diamond Pattern\n" << endl;
 
     char input_character;
     cout << "Enter Character: ";
@@ -152,40 +168,25 @@ int main() {
     cout << "\n";
 
     switch (input_character) {
-        case 'a':
-            diamondPattern(n);
-        break;
+        case 'a': diamondPattern(n); break;
 
-        case 'b': 
-            halfDiamondPattern(n);
-        break;
+        case 'b': halfDiamondPattern(n); break;
 
-        case 'c': 
-            halfDiamondPattern_ii(n);
-        break;
+        case 'c': halfDiamondPattern_ii(n); break;
 
-        case 'd': 
-            hourGlassPattern(n);
-        break;
+        case 'd': hourGlassPattern(n); break;
 
-        case 'e': 
-            rightTrianglePattern(n);
-        break;
+        case 'e': rightTrianglePattern(n); break;
 
-        case 'f': 
-            trianglePattern(n);
-        break;
+        case 'f': trianglePattern(n); break;
 
-        case 'g': 
-            reverseTrianglePattern(n);
-        break;
+        case 'g': reverseTrianglePattern(n); break;
 
-        case 'h': 
-            rightTrianglePattern_ii(n);
-        break;
+        case 'h': rightTrianglePattern_ii(n); break;
+        
+        case 'i': hollowDiamond(n); break;
 
-        default:
-            break;
+        default: break;
     }
 
     return 0;
